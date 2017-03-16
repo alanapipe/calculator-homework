@@ -1,54 +1,86 @@
-//The first step is to declare the counters for equation totals and set them to zero.
-var sum = 0,
-	difference = 0,
-	product = 0,
-	quotient = 0;
+	//declare variables
+	var num1; //= parseFloat($("#first").val());
+	var num2; //= parseFloat($("#second").val());
+
+	var sum; //= addNum(first, second);
+	var difference; //= subtractNum(first, second);
+	var product; //= multiplyNum(first, second);
+	var quotient; //= divideNum(first, second);
 
 
-$(document).ready(function () { //on DOM ready, bind clicks
-	$("#compute").on("click", function (e) {
-		e.preventDefault(); //disable the button's default behavior
+	$(document).ready(function () { //on DOM ready, bind clicks
+		$("#button_magic").on("click", function (e) {
+			e.preventDefault(); //disable the button's default behavior
 
 
-	$(".inputs").each(function () { 
+			//store the input value of the first number
+			num1 = parseFloat($("#first").val());
+			//store input value of second number
+			num2 = parseFloat($("#second").val());
 
-			var inputs = $(this), 
-				value = parseInt(inputs.val());
-				 
-			update_sum(first + second);
+			//call the math function
+			runMath();
 
-			update_difference(first - second);
-
-			update_product(first * second);
-
-			update_quotient(first / second)
-		}); 
-
-		show_results();
+			showMath();
+		});
 	});
-});
+
+
+	//spell out runMath
+	function runMath() {
+		sum = num1 + num2;
+		difference = num2 - num1;
+		product = num1 * num2;
+		quotient = num1 / num2;
+	}
+
+
+	function showMath() {
+		$("#first").text(num1);
+		$("#second").text(num2);
+		$("#show-sum").text(sum);
+		$("#show-difference").text(difference);
+		$("#show-product").text(product);
+		$("#show-quotient").text(quotient);
+		$("#final-results").addClass('results-show'); //shows the hidden class
+	};
+
+
+
+
+
+	/*$("#sum").val(sum);
+		$("#difference").val(difference);
+		$("#product").val(product);
+		$("#quotient").val(quotient);
+
+		$("#show_results").addClass("active");
+
+		});
+	});
+
 
 //defining the functions outside of document.ready
-		function update_sum(first + second) {
-			var sum = first + second;
-		}
+		function addNum(first, second) {
+			return first + second;
+		};
 
-		function update_difference(first - second) {
-			var difference = first - second;
-		}
+		function subtractNum(first, second) {
+			return first - second;
+		};
 
-		function update_product(first * second) {
-			var product = quantity * value;
-		}
+		function multiplyNum(first, second) {
+			return = first * second;
+		};
 
-		function update_quotient(first / second) {
-			var quotient = first / second;
-		}
+		function divideNum(first, second) {
+			return = first / second;
+		};
 
-		function show_results() {
+		/*function show_results() {
 			$("#sum").val(sum);
 			$("#difference").val(difference);
-			$("product").val(product);
-			$("quotient").val(quotient);
+			$("#product").val(product);
+			$("#quotient").val(quotient);
 		}
-
+		*/

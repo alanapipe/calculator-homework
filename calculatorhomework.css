@@ -1,0 +1,12 @@
+.results {
+    display: none;
+    padding: 10px;
+}
+
+.results-show {
+    display: block;
+}
+
+.highlight {
+    background-color: yellow;
+}
