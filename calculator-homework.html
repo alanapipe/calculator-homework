@@ -21,18 +21,27 @@
 
     <body>
 
-    <form>
-    <p> 1st number:</p><input type="number" class="inputs" id="first" data-value="1" required>
-    <p> 2nd number:</p><input type="number" class="inputs" id="second" data-value="1" required>
-    <br> <input type="button" value="COMPUTE!"/>
-   </form>
+    <form id="first_form">
+    <p> 1st number:</p><input type="number" id="first" placeholder="your favorite number" required>
+    <p> 2nd number:</p><input type="number" id="second" placeholder="any old number" required>
+    </form>
+
+    <br> <button id="button_magic"> CALCULATE! </button>
 
 <!--meant to hold response from js-->
-    <p>sum</p><input id="sum" type="number" readonly/> 
-    <p>difference</p><input id="difference" type="number" readonly/> 
-    <p>product</p><input id="product" type="text" readonly/> 
-    <p>quotient</p><input id="quotient" type="text" readonly/> 
-    </form>
+    <div class="results" id="final-results">
+    <p>
+    <li> The augend plus the addend equals: <span id="show-sum" class="highlight"></span></li>
+            <br>
+    <li>The minuend minus the subtrahend makes: <span id="show-difference" class="highlight"></span></li> 
+            <br>       
+    <li>The multiplicand times the multiplier is: <span id="show-product" class="highlight"></span></li>
+            <br>
+    <li>The dividend divided by the divisor equals: <span id="show-quotient" class="highlight"></span></li>
+            <br>
+    </p>
+    </div>
+   
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="calculatorhomework.js" type="text/javascript"></script>
